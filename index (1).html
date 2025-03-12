@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الأسماء</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 50px;
+        }
+        .name {
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .name:hover {
+            background-color: #005f73;
+        }
+        .description {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>اضغط على الاسم لعرض الوصف</h1>
+
+    <button class="name" onclick="showDescription('abdulkarim')">عبد الكريم</button>
+    <button class="name" onclick="showDescription('wadhha')">وضحى</button>
+    <button class="name" onclick="showDescription('reem')">ريم</button>
+
+    <div id="description" class="description"></div>
+
+    <script>
+        function showDescription(name) {
+            var desc = document.getElementById("description");
+            var content = "";
+
+            if (name === "abdulkarim") {
+                content = "عبد الكريم؟ يا سلام! رجل لا يُشق له غبار، أخلاقه ذهب، وحكمته تسبق عمره بسنين. لو اجتمع أهل الكوكب على شخص يمدحونه، فهو بلا شك عبد الكريم.";
+            } else if (name === "wadhha") {
+                content = "وضحى؟ والله لو كان الصمت ذهب، كان أغلى من كلامها! دايم عندها تعليق لازم ينقال، حتى لو ما له علاقة بالموضوع. بس نقول: الله يعين اللي يسمع.";
+            } else if (name === "reem") {
+                content = "ريم؟ تحس إنها جاية من كوكب ثاني، بس مو كوكب ذكي! كل يوم قصة غريبة، وكل تعليق أغرب من اللي قبله. تحاول تضحك بس تضحك علينا أكثر.";
+            }
+
+            desc.style.display = "block";
+            desc.innerHTML = content;
+        }
+    </script>
+
+</body>
+</html>
